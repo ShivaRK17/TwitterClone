@@ -69,7 +69,7 @@ const Profile = () => {
               : ""}
           </div>
         </div>}
-        <div className="m-3 p-3 rounded">
+        <div className="p-2 m-1 rounded">
           <h2>Profile's Tweets: </h2>
           {/* {thistweets.map((e, ind) => {
           return <Tweet key={ind} tweetdata={e} />

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const AddTweetModal = () => {
     const refClose = useRef(null)
     const [tweet, setTweet] = useState("")
+    const [buttext, setButtext] = useState("Post Tweet")
     const { islogin, fetchAllTweets, getAllUsers,alertMessage } = useContext(AppContext)
     const navigate = useNavigate()
     const handleInput = (e) => {
@@ -20,6 +21,7 @@ const AddTweetModal = () => {
             }
             else {
                 try {
+                    setButtext("Posting...")
                     const res = await fetch(`${process.env.REACT_APP_BACKENDURL}/api/tweet/createTweet`, {
                         method: "POST",
                         headers: {
@@ -30,11 +32,13 @@ const AddTweetModal = () => {
                     })
                     const data = await res.json()
                     console.log(data);
+                    setButtext("Post Tweet")
                     setTweet("")
                     fetchAllTweets()
                     getAllUsers()
                     refClose.current.click()
                 } catch (error) {
+                    setButtext("Post Tweet")
                     console.log(error);
                     alertMessage(`Tweet cannot be Posted`)
                     refClose.current.click()
@@ -64,7 +68,7 @@ const AddTweetModal = () => {
                         </div>
                         <div className="modal-footer">
                             <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" onClick={addTweet} className="btn btn-primary">Post Tweet</button>
+                            <button type="button" onClick={addTweet} className="btn btn-primary">{buttext}</button>
                         </div>
                     </div>
                 </div>

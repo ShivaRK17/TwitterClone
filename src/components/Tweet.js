@@ -7,9 +7,11 @@ const Tweet = (props) => {
     const { loginuser, fetchAllTweets, allUsers } = useContext(AppContext)
     const [likecount, setLikecount] = useState(props.tweetdata.likeCount)
     const [buttext, setButtext] = useState("Like")
+    const [deltext, setDeltext] = useState("Delete Tweet")
     const refClose = useRef(null)
     const deleteTweet = async (deleteid) => {
         try {
+            setDeltext("Deleting...")
             const res = await fetch(`${process.env.REACT_APP_BACKENDURL}/api/tweet/deleteTweet/${deleteid}`, {
                 method: 'DELETE',
                 headers: {
@@ -17,12 +19,14 @@ const Tweet = (props) => {
                     "auth-token": localStorage.getItem("authToken")
                 }
             })
+            setDeltext("Delete Tweet")
             refClose.current.click()
             const data = await res.json()
             fetchAllTweets()
             console.log(data);
         }
         catch (err) {
+            setDeltext("Delete Tweet")
             console.log(err);
         }
     }
@@ -121,13 +125,13 @@ const Tweet = (props) => {
                         </div>
                         <div className="modal-footer">
                             <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" onClick={() => { deleteTweet(props.tweetdata._id) }} className="btn btn-danger">Delete Tweet</button>
+                            <button type="button" onClick={() => { deleteTweet(props.tweetdata._id) }} className="btn btn-danger">{deltext}</button>
                         </div>
                     </div>
                 </div>
             </div>
             {/* Tweet */}
-            <div className="tweetbody rounded p-3 m-3">
+            <div className="tweetbody rounded p-3 mx-1 my-3">
                 <div className="headtweet">
                     <Link to={`/TwitterClone/profile/${props.tweetdata.author}`}>
                         <img className='profpic' src={allUsers.filter((e) => {
