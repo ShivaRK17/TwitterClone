@@ -24,7 +24,7 @@ const Home = () => {
                             {islogin ?
                                 <button className='btn btn-outline-info' data-bs-toggle="modal" data-bs-target="#exampleModal">Add a Tweet ✉️</button>
                                 :
-                                <button className='btn btn-outline-info' onClick={() => { navigate('/login') }}  >Add a Tweet ✉️</button>
+                                <button className='btn btn-outline-info' onClick={() => { navigate('/TwitterClone/login') }}  >Add a Tweet ✉️</button>
                             }
                         </div>
                         <Tweets />

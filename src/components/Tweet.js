@@ -28,7 +28,7 @@ const Tweet = (props) => {
     }
     const handleLike = async (id) => {
         if (!localStorage.getItem('authToken')) {
-            navigate('/login')
+            navigate('/TwitterClone/login')
         }
         else {
             if (likecount.includes(loginuser._id)) {
@@ -90,7 +90,7 @@ const Tweet = (props) => {
                             {allUsers.filter((e) => {
                                 return likecount.includes(e._id)
                             }).map((e, ind) => {
-                                return <Link key={ind} className='text-white' style={{textDecoration:'none'}} target='_blank' onClick={() => { refClose.current.click() }} to={`/profile/${e._id}`}>
+                                return <Link key={ind} className='text-white' style={{textDecoration:'none'}} target='_blank' onClick={() => { refClose.current.click() }} to={`/TwitterClone/profile/${e._id}`}>
                                     <div key={ind} className='likescount container rounded my-1 p-3 d-flex justify-content-between align-items-center'>
                                         <img src={e.imageUrl} alt="ProfPic" />
                                         <p className='m-0'>{e.name.toUpperCase()}</p>
@@ -129,7 +129,7 @@ const Tweet = (props) => {
             {/* Tweet */}
             <div className="tweetbody rounded p-3 m-3">
                 <div className="headtweet">
-                    <Link to={`/profile/${props.tweetdata.author}`}>
+                    <Link to={`/TwitterClone/profile/${props.tweetdata.author}`}>
                         <img className='profpic' src={allUsers.filter((e) => {
                             return e._id === props.tweetdata.author
                         }).map((e) => {
@@ -147,7 +147,7 @@ const Tweet = (props) => {
                     }).map((e, ind) => {
                         return <div key={ind} className='d-flex flex-column mx-3'>
                             <p className='lead m-0'>{e.name}</p>
-                            <p className='m-0 d-flex align-items-center' style={{ fontSize: '0.8rem' }}><Link to={`/profile/${props.tweetdata.author}`}>@{e.username}</Link>{e.username==="ShivaRK"?<img className='verified m-1' src={process.env.PUBLIC_URL+'/verified.png'} alt="" />:""}</p>
+                            <p className='m-0 d-flex align-items-center' style={{ fontSize: '0.8rem' }}><Link to={`/TwitterClone/profile/${props.tweetdata.author}`}>@{e.username}</Link>{e.username==="ShivaRK"?<img className='verified m-1' src={process.env.PUBLIC_URL+'/verified.png'} alt="" />:""}</p>
                         </div>
                     })
                     }

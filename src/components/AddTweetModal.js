@@ -12,7 +12,7 @@ const AddTweetModal = () => {
     }
     const addTweet = async () => {
         if (!islogin) {
-            navigate('/login')
+            navigate('/TwitterClone/login')
         }
         else {
             if (tweet === "") {

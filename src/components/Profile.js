@@ -41,7 +41,7 @@ const Profile = () => {
       settcurrUser()
     }
     else {
-      navigate('/login')
+      navigate('/TwitterClone/login')
     }
     // eslint-disable-next-line
   }, [location.pathname, alltweets])

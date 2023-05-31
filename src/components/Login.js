@@ -45,7 +45,7 @@ const Login = () => {
                 })
                 const data2 = await res2.json()
                 setLoginuser(data2)
-                navigate('/')
+                navigate('/TwitterClone')
                 alertMessage(`Logged In Successfully as ${data2.username}`)
                 setButtext('Submit')
             }
@@ -80,7 +80,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div>
-                            <p>Haven't Registered Yet? <Link className='text-info' to="/signup">Signup</Link></p>
+                            <p>Haven't Registered Yet? <Link className='text-info' to="/TwitterClone/signup">Signup</Link></p>
                         </div>
                         <button type="submit" className="btn btn-primary">{buttext}</button>
                     </form>

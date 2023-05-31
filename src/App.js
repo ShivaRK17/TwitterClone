@@ -16,12 +16,12 @@ const App = () => {
     <>
     <Navbar/>
     <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/profile/:id" element={<Profile/>}/>
-      <Route path="/signup" element={<Signup/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path='*' element={<Error/>}/>
+      <Route path="/TwitterClone" element={<Home/>}/>
+      <Route path="/TwitterClone/about" element={<About/>}/>
+      <Route path="/TwitterClone/profile/:id" element={<Profile/>}/>
+      <Route path="/TwitterClone/signup" element={<Signup/>}/>
+      <Route path="/TwitterClone/login" element={<Login/>}/>
+      <Route path='/TwitterClone/*' element={<Error/>}/>
     </Routes>
 
     </>

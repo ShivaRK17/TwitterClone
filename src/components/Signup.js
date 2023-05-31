@@ -67,7 +67,7 @@ const Signup = () => {
                     getAllUsers()
                     setLoginuser(data)
                     setIslogin(true)
-                    navigate('/')
+                    navigate('/TwitterClone')
                     setButtext('Submit')
                     alertMessage(`Profile Created Successfully`)
                 }
@@ -143,7 +143,7 @@ const Signup = () => {
                             <img style={{ maxWidth: '50vw' }} src={user.imageUrl} alt="" />
                         </div>
                         <div>
-                            <p>Have an account? <Link className='text-info' to="/login">Login</Link></p>
+                            <p>Have an account? <Link className='text-info' to="/TwitterClone/login">Login</Link></p>
                         </div>
                         <button type="submit" className="btn btn-primary">{buttext}</button>
                     </form>

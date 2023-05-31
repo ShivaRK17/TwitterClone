@@ -14,7 +14,7 @@ const Navbar = () => {
             setIslogin(false)
             setLoginuser({})
             alertMessage("Logged Out Successfully")
-            navigate('/')
+            navigate('/TwitterClone')
         }
     }
 
@@ -53,31 +53,31 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">🐦 Twitter</Link>
+                    <Link className="navbar-brand" to="/TwitterClone">🐦 Twitter</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+                                <NavLink className="nav-link" aria-current="page" to="/TwitterClone">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/about">About</NavLink>
+                                <NavLink className="nav-link" aria-current="page" to="/TwitterClone/about">About</NavLink>
                             </li>
                             {islogin ? <>
                                 <li className="nav-item">
-                                    <NavLink className="btn btn-sm btn-primary" aria-current="page" to={`/profile/${loginuser._id}`}>My Profile</NavLink>
+                                    <NavLink className="btn btn-sm btn-primary" aria-current="page" to={`/TwitterClone/profile/${loginuser._id}`}>My Profile</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <button className="btn btn-sm btn-danger m-1" aria-current="page" onClick={logout}>Logout</button>
                                 </li>
                             </> : <>
                                 <li className="nav-item">
-                                    <NavLink className="btn btn-sm btn-primary m-1" aria-current="page" to="/signup">Signup</NavLink>
+                                    <NavLink className="btn btn-sm btn-primary m-1" aria-current="page" to="/TwitterClone/signup">Signup</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="btn btn-sm btn-primary m-1" aria-current="page" to="/login">Login</NavLink>
+                                    <NavLink className="btn btn-sm btn-primary m-1" aria-current="page" to="/TwitterClone/login">Login</NavLink>
                                 </li>
                             </>}
                             {/* <li className="nav-item">
