@@ -94,11 +94,11 @@ const Tweet = (props) => {
                             {allUsers.filter((e) => {
                                 return likecount.includes(e._id)
                             }).map((e, ind) => {
-                                return <Link key={ind} className='text-white' style={{textDecoration:'none'}} target='_blank' onClick={() => { refClose.current.click() }} to={`/TwitterClone/profile/${e._id}`}>
-                                    <div key={ind} className='likescount container rounded my-1 p-3 d-flex justify-content-between align-items-center'>
+                                return <div key={ind} role='button' className='text-white' data-bs-dismiss="modal" style={{textDecoration:'none'}} onClick={()=>{navigate(`/TwitterClone/profile/${e._id}`)}}>
+                                    <div className='likescount container rounded my-1 p-3 d-flex justify-content-between align-items-center'>
                                         <img src={e.imageUrl} alt="ProfPic" />
                                         <p className='m-0'>{e.name.toUpperCase()}</p>
-                                    </div></Link>
+                                    </div></div>
                             })}
                             {/* {likecount.map((e,ind) => {
                                 return <h1 key={ind}>{
