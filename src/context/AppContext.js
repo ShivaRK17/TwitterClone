@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
     const [islogin, setIslogin] = useState(false)
     const [loginuser, setLoginuser] = useState({})
     const [alltweets, setAlltweets] = useState([])
+    const [allComments, setallComments] = useState([])
     const [loading, setLoading] = useState(true)
     const [usertweets, setUsertweets] = useState([])
     const [allUsers, setAllUsers] = useState([])
@@ -50,7 +51,17 @@ const AppProvider = ({ children }) => {
             console.log(err);
         }
     }
-    return <AppContext.Provider value={{ islogin, setIslogin, loginuser, setLoginuser, fetchAllTweets, alltweets, usertweets, fetchUserTweets, getAllUsers, allUsers, loading, showAlert, alertMessage, alertmess }}>
+    const getAllComments = async()=>{
+        try {
+            const res = await fetch(`${process.env.REACT_APP_BACKENDURL}/api/comment/getComments`)
+            const data = await res.json()
+            // console.log(data);
+            setallComments(data)
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    return <AppContext.Provider value={{ islogin, setIslogin, loginuser, setLoginuser, fetchAllTweets, alltweets, usertweets, fetchUserTweets, getAllUsers, allUsers, loading, showAlert, alertMessage, alertmess,allComments,getAllComments }}>
         {children}
     </AppContext.Provider>
 }

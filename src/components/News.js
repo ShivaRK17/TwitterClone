@@ -8,7 +8,9 @@ const News = () => {
     const [news, setNews] = useState([])
     
     const getNews = ()=>{
-        fetch("https://inshorts.deta.dev/news?category=all")
+        // fetch("https://inshorts.deta.dev/news?category=all")
+        // fetch("https://inshorts-news.vercel.app/all")
+        fetch("https://inshortsapi.vercel.app/news?category=all")
         .then((res)=>{
             return res.json();
         }).then((res)=>{

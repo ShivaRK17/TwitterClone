@@ -5,7 +5,7 @@ const New = (props) => {
     <>
     <div className="newsbody rounded p-3 m-3">
         <img src={props.imgurl} alt="" />
-        <h6>{props.title}</h6>
+        <h6 className='newsTitle my-1'><b>{props.title}</b></h6>
         <p>{props.content.substr(0,200)}...</p>
         <a className='btn btn-primary btn-sm' href={props.url}>Read More</a>
     </div>

@@ -1,7 +1,7 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap'); */
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 *{
   box-sizing: border-box;
   /* font-family: 'Source Sans Pro', sans-serif; */
@@ -31,6 +31,7 @@ nav{
   height: 50px;
   width: 50px;
   object-fit: cover;
+  border-radius: 5px;
 }
 .inttweet{
   display: flex;
@@ -69,6 +70,8 @@ nav{
 .likescount{
   text-decoration: none;
   background-color: #4e5861;
+  font-size: 0.8rem;
+  font-weight: 100;
 }
 .likescount img{
   object-fit: cover;
@@ -120,4 +123,82 @@ nav{
   font-size: 18px;
   line-height: 1.5;
   color: #666;
+}
+/* .datetweet{
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+} */
+.newsTitle:hover{
+  color: rgb(228, 148, 0);
+  transition: 0.2s;
+}
+hr{
+  margin: 10px 0;
+}
+
+.likebtn{
+  border: none;
+  background-color: transparent;
+}
+.likebtn img:hover{
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+/* CSS for WhatsApp-style chat */
+
+.chat-container {
+  padding-top: 5px;
+  display: flex;
+flex-direction: column;
+}
+
+.chat-message {
+  /* width: 95%; */
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.chat-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.chat-bubble {
+  width: 90%;
+  background-color: #0067ff3b;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 100;
+}
+
+
+.ongoing{
+  /* align-items: flex-end; */
+  flex-direction: row-reverse;
+}
+
+.chat-message .ongoing{
+  background-color: #e2e2e2;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: #777;
+}
+.modal-body{
+  padding-top: 0px;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+.alert{
+  position:sticky;
+  top: 10px;
 }

@@ -3,9 +3,10 @@ import { AppContext } from '../context/AppContext'
 import Tweet from './Tweet';
 
 const Tweets = () => {
-  const {fetchAllTweets,alltweets,loading} = useContext(AppContext)
+  const {fetchAllTweets,alltweets,loading,getAllComments} = useContext(AppContext)
   useEffect(() => {
     fetchAllTweets()
+    getAllComments()
     // eslint-disable-next-line
   }, [])
   

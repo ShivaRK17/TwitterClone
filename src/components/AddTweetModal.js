@@ -22,6 +22,7 @@ const AddTweetModal = () => {
             else {
                 try {
                     setButtext("Posting...")
+                    setTweet(tweet.trim())
                     const res = await fetch(`${process.env.REACT_APP_BACKENDURL}/api/tweet/createTweet`, {
                         method: "POST",
                         headers: {
